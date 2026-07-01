@@ -7,8 +7,7 @@ A simple Discord bot built with Python and `discord_bot.py` that fetches random 
 ## ✨ Features
 
 - 👋 Greets users with `$hello`
-- 😂 Sends a random meme with `$meme`, formatted as a Discord embed (title, image, upvotes, subreddit)
-- 📎 Sends a random meme as a **downloaded file attachment** with `$memefile` (useful if you want the image to persist even if the original link disappears)
+- 😂 Sends a random meme with `@yourbotname`
 - 📢 Replies with a meme whenever the bot is **@mentioned**
 - 💬 Responds to any other message with a friendly fallback prompt
 - 🔞 Automatically skips NSFW-flagged memes
