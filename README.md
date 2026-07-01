@@ -73,6 +73,9 @@ Logged on as YourBotName#1234
 ## 💬 Commands
 
 `$hello` :- Greets the user who sent it 
+
+---
+
 `@your bot name` :- Sends a random meme as an embed 
 
 
