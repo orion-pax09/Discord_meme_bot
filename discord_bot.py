@@ -66,13 +66,15 @@ class MyClient(discord.Client):
                 )
                 return 
             category = parts[1].lower()
-
+            
+            
             if category not in MEME_CATEGORIES:
                 await message.channel.send(
                     f"Available categories:\n"
-                    "\n".join(MEME_CATEGORIES.keys())
+                    f"{", ".join(MEME_CATEGORIES.keys())}"
                 )
                 return 
+            
             
             meme = get_meme(category)
             
