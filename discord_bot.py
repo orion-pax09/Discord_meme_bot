@@ -4,18 +4,37 @@ import os
 from dotenv import load_dotenv
 
 MEME_CATEGORIES = {
-    "programming": "ProgrammerHumor",
-    "gaming": "gaming",
+    "memes": "memes",
+    "dank": "dankmemes",
+    "funny": "funny",
     "wholesome": "wholesomememes",
+    "programming": "ProgrammerHumor",
+    "linux": "linuxmemes",
+    "pcmasterrace": "pcmasterrace",
+    "gaming": "gaming",
+    "minecraft": "MinecraftMemes",
+    "valorant": "ValorantMemes",
+    "cs2": "GlobalOffensive",
+    "league": "LeagueOfMemes",
     "anime": "Animemes",
+    "animememes": "animememes",
     "football": "soccermemes",
+    "nba": "nbamemes",
+    "formula1": "formula1",
+    "cricket": "CricketShitpost",
     "college": "CollegeMemes",
+    "school": "schoolmemes",
     "gym": "GymMemes",
     "cats": "cats",
     "dogs": "dogpictures",
-    "dark" : "darkmemers",
-    "pakistan":"PakMemeistan",
-    "dirty" : "DirtyMemes"
+    "dark": "darkmemers",
+    "pakistan": "chutyapa",
+    "history": "HistoryMemes",
+    "science": "ScienceMemes",
+    "starwars": "PrequelMemes",
+    "marvel": "marvelmemes",
+    "lotr": "lotrmemes",
+    "cars": "carmemes"
 }
 
 load_dotenv()
