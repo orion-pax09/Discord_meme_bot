@@ -12,7 +12,8 @@ def get_meme():
 
 class MyClient(discord.Client):
     async def on_ready(self):
-        print('Logged on as {0}'.format(self.user))
+        print(f"Logged on as {self.user}")
+        print("Bot started!")
 
     async def on_message(self, message):
         if message.author == self.user:
@@ -22,7 +23,9 @@ class MyClient(discord.Client):
             await message.channel.send('Hello guyzz!')
         
         if self.user in message.mentions:
+            print("Mention detected!")
             meme_url = get_meme()
+            print(meme_url)
             await message.channel.send(meme_url)
 
 intents = discord.Intents.default()
