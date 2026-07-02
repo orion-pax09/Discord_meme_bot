@@ -3,10 +3,25 @@ import requests
 import os
 from dotenv import load_dotenv
 
-load_dotenv()
+MEME_CATEGORIES = {
+    "programming": "ProgrammerHumor",
+    "gaming": "gaming",
+    "wholesome": "wholesomememes",
+    "anime": "Animemes",
+    "football": "soccermemes",
+    "college": "CollegeMemes",
+    "gym": "GymMemes",
+    "cats": "cats",
+    "dogs": "dogpictures",
+    "dark" : "darkmemers",
+    "pakistan":"PakMemeistan",
+    "dirty" : "DirtyMemes"
+}
 
-def get_meme():
-    response = requests.get('https://meme-api.com/gimme')
+load_dotenv()
+def get_meme(category):
+    subreddit = MEME_CATEGORIES[category]
+    response = requests.get(f"https://meme-api.com/gimme/{subreddit}")
     json_data = response.json()
     return json_data['url']
 
@@ -21,10 +36,32 @@ class MyClient(discord.Client):
         
         if message.content.startswith('$hello'):
             await message.channel.send('Hello guyzz!')
-        
+
+
+        if message.content.startswith("$meme"):
+            parts = message.content.split()
+            if len(parts) != 2:
+                await message.channel.send(
+                    "Available categories:\n"
+                    "\n".join(MEME_CATEGORIES.keys())
+                )
+                return 
+            category = parts[1].lower()
+
+            if category not in MEME_CATEGORIES:
+                await message.channel.send(
+                    f"Available categories:\n"
+                    "\n".join(MEME_CATEGORIES.keys())
+                )
+                return 
+            
+            meme = get_meme(category)
+            
+            await message.channel.send(meme)
+
         if self.user in message.mentions:
             print("Mention detected!")
-            meme_url = get_meme()
+            meme_url = get_meme("pakistan")
             print(meme_url)
             await message.channel.send(meme_url)
 
