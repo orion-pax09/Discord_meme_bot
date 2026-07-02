@@ -28,7 +28,7 @@ MEME_CATEGORIES = {
     "cats": "cats",
     "dogs": "dogpictures",
     "dark": "darkmemers",
-    "pakistan": "chutyapa",
+    "pakistan": "pakistanimemes",
     "history": "HistoryMemes",
     "science": "ScienceMemes",
     "starwars": "PrequelMemes",
@@ -61,7 +61,6 @@ class MyClient(discord.Client):
             parts = message.content.split()
             if len(parts) != 2:
                 await message.channel.send(
-                    "Available categories:\n"
                     "\n".join(MEME_CATEGORIES.keys())
                 )
                 return 
