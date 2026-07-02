@@ -4,37 +4,18 @@ import os
 from dotenv import load_dotenv
 
 MEME_CATEGORIES = {
-    "memes": "memes",
-    "dank": "dankmemes",
-    "funny": "funny",
-    "wholesome": "wholesomememes",
     "programming": "ProgrammerHumor",
-    "linux": "linuxmemes",
-    "pcmasterrace": "pcmasterrace",
     "gaming": "gaming",
-    "minecraft": "MinecraftMemes",
-    "valorant": "ValorantMemes",
-    "cs2": "GlobalOffensive",
-    "league": "LeagueOfMemes",
+    "wholesome": "wholesomememes",
     "anime": "Animemes",
-    "animememes": "animememes",
     "football": "soccermemes",
-    "nba": "nbamemes",
-    "formula1": "formula1",
-    "cricket": "CricketShitpost",
     "college": "CollegeMemes",
-    "school": "schoolmemes",
     "gym": "GymMemes",
     "cats": "cats",
     "dogs": "dogpictures",
-    "dark": "darkmemers",
-    "pakistan": "pakistanimemes",
-    "history": "HistoryMemes",
-    "science": "ScienceMemes",
-    "starwars": "PrequelMemes",
-    "marvel": "marvelmemes",
-    "lotr": "lotrmemes",
-    "cars": "carmemes"
+    "dark" : "darkmemers",
+    "pakistan":"PakMemeistan",
+    "dirty" : "DirtyMemes"
 }
 
 load_dotenv()
@@ -61,19 +42,18 @@ class MyClient(discord.Client):
             parts = message.content.split()
             if len(parts) != 2:
                 await message.channel.send(
+                    "Available categories:\n"
                     "\n".join(MEME_CATEGORIES.keys())
                 )
                 return 
             category = parts[1].lower()
-            
-            
+
             if category not in MEME_CATEGORIES:
                 await message.channel.send(
-                    f"Available categories:\n"
-                    f"{", ".join(MEME_CATEGORIES.keys())}"
+                    f"Available categories:\n" + 
+                    "\n".join(MEME_CATEGORIES.keys())
                 )
                 return 
-            
             
             meme = get_meme(category)
             
