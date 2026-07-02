@@ -6,10 +6,30 @@ A simple Discord bot built with Python and `discord_bot.py` that fetches random 
 
 ## ✨ Features
 
-- 👋 Greets users with `$hello`
-- 😂 Sends a random meme with `@yourbotname`
-- 📢 Replies with a meme whenever the bot is **@mentioned**
-- 💬 Responds to any other message with a friendly fallback prompt
+- 👋 `$hello` greeting command
+- 🎭 Category-based meme command (`$meme <category>`)
+- 📢 Responds with a meme when mentioned
+- 📋 Lists available meme categories for invalid commands
+- 📂 Supports categories like:
+  - programming
+  - gaming
+  - wholesome
+  - anime
+  - football
+  - college
+  - gym
+  - cats
+  - dogs
+  - dark
+  - pakistan
+  - history
+  - science
+  - marvel
+  - starwars
+  - cars
+  - and more...
+- 🔐 Secure token management with `.env`
+- ☁️ Deployed on Railway
 - 🔞 Automatically skips NSFW-flagged memes
 - 🔐 Keeps your bot token safe using environment variables (`.env`)
 
